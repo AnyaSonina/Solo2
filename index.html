@@ -11,8 +11,26 @@
     <div class="container">
       <h1>Generate a <span class="accent">random password</span></h1>
       <p>Never use an insecure password again.</p>
-      <button class="btn-generator">Generate passwords</button>
-      <input id="input_el" type="number" placeholder="How many chars?" autofocus>
+      <div class="flex">
+        <button class="btn-generator">Generate passwords</button>
+        <input id="input_el" type="number" placeholder="How many chars?" autofocus>     
+      </div>
+      <div class="toggles flex_toggles">
+        <div class="toggle_nums">
+          <input id="toggle1" class="toggle" type="checkbox" role="switch" name="toggle" value="on">
+            <label for="toggle" class="slot">
+              <span class="slot__label">num OFF</span>
+              <span class="slot__label">num ONN</span>
+            </label>
+        </div>
+        <div class="toggle_chars">
+          <input id="toggle2" class="toggle" type="checkbox" role="switch" name="toggle" value="on">
+            <label for="toggle" class="slot">
+              <span class="slot__label">chars OFF</span>
+              <span class="slot__label">chars ONN</span>
+            </label>
+        </div>
+      </div>
       <hr />
 
       <div class="passwords">
@@ -20,6 +38,7 @@
         <div class="password__container password_el_2"></div>
         <div class="password__container password_el_3"></div>
         <div class="password__container password_el_4"></div>
+        
       </div>
       </div>
     </div>

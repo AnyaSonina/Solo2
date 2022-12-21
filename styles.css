@@ -3,10 +3,13 @@ body {
   display:flex; 
   flex-direction:column; 
   justify-content:center;
+  align-items: center;
   min-height: 100vh;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 400px;
   min-height: fit-content;
@@ -15,6 +18,21 @@ body {
   border: 7px solid #fff;
   border-radius: 1em;
   padding: 4em 2em 2em 2em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em; 
+}
+
+.flex_toggles {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1em;
 }
 
 .passwords {
@@ -59,8 +77,7 @@ hr {
 
 input {
   outline: none;  
-  margin-bottom: 2em;
-  width: 100px;  
+  max-width: 100px;    
 }
 
 input::-webkit-outer-spin-button,
@@ -88,3 +105,81 @@ input::-webkit-inner-spin-button {
   color:#10B981;
 }
 
+/*Toggle*/
+.toggle, .toggle:before {
+  background-color: #f5f5f5;
+}
+
+.toggle, .toggle:before, .slot__label {
+  transition-property: background-color, transform, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in, cubic-bezier(0.6,0.2,0.4,1.5), linear;  
+}
+
+.toggle:before, .slot, .slot__label {
+  display: block;
+}
+
+.toggle:before {
+  position: absolute;  
+}
+
+.toggle:checked {
+  background-color: #10B981;
+}
+.toggle:focus {
+  outline: transparent;
+}
+
+.toggle {
+  border-radius: 0.75em;
+  box-shadow: 0 0 0 0.1em inset;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.25em;
+  width: 1em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle:before {
+  background: currentColor;
+  border-radius: 50%;
+  content: "";
+  top: 0.2em;
+  left: 0.2em;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.toggle:checked:before {
+  transform: translateX(2.5em);
+}
+
+.toggle:checked ~ .slot .slot__label, .slot__label:nth-child(2) {
+  transform: translateY(-50%) scaleY(0);
+}
+
+.toggle:checked ~ .slot .slot__label:nth-child(2) {
+  transform: translateY(-100%) scaleY(1);
+}
+
+.slot {
+  color: transparent;
+  font-weight: bold;
+  letter-spacing: 0.2;
+  -webkit-text-stroke: 0.05em #fff;
+  height: 50%;
+  letter-spacing: 1.7px;
+}
+
+.slot__label {
+  transform-origin: 50% 0;
+}
+
+.slot__label:nth-child(2) {
+  transform-origin: 50% 100%;
+}
