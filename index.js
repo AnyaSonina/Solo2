@@ -51,6 +51,8 @@ function render(){
 
 btnGenerator.addEventListener("click",render)
 
+let timeoutId
+
 for(let i = 0; i<passwordCont.length; i++) {
   passwordCont[i].addEventListener("click", (event) => {
     if(passwordCont[i].childNodes.length > 0) {
@@ -59,7 +61,7 @@ for(let i = 0; i<passwordCont.length; i++) {
       }    
       popUp.innerHTML = `${event.target.innerText}  <span style="color:#1F2937;">copied to clipboard</span> `
       popUp.style.opacity = 1
-      let timeoutId = setTimeout(() => {
+      timeoutId = setTimeout(() => {
         popUp.style.opacity = 0      
       }, 1000)
     }
