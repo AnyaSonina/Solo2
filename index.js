@@ -7,17 +7,13 @@ const passwordCont = document.getElementsByClassName("password__container")
 const popUp = document.getElementById("pop-up")
 const toggleNums = document.getElementById("toggle1")
 const toggleChars = document.getElementById("toggle2")
-
-
-
-
 const inputEl = document.getElementById("input_el")
 
 let allChars 
 
 function toggling() {
   allChars = []
-  for(let i=32; i<127; i++) {
+  for(let i=32; i<128; i++) {
     allChars.push(String.fromCharCode(i))
   }
 
